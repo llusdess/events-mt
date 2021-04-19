@@ -1,0 +1,23 @@
+<head>
+  <title>
+    <% if content_for?(:title) %>
+    <%= yield :title %> |
+    <% end %>
+    Events 3
+  </title>
+
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  
+  <%= render 'shared/favicon' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>

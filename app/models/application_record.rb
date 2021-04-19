@@ -1,0 +1,36 @@
+# frozen_string_literal: true
+class ApplicationRecord < ActiveRecord::Base
+  # extends ...................................................................
+  # includes ..................................................................
+  # relationships .............................................................
+  # validations ...............................................................
+  # callbacks .................................................................
+  # scopes ....................................................................
+  # additional config (i.e. accepts_nested_attribute_for etc...) ..............
+  # class methods .............................................................
+  # public instance methods ...................................................
+  # protected instance methods ................................................
+  # private instance methods ..................................................
+
+  self.abstract_class = true
+
+  after_save_commit :save_notification
+  after_destroy_commit :destroy_notification
+
+  private
+
+  def save_notification
+    publish_notification(type: "saved")
+  end
+
+  def destroy_notification
+    publish_notification(type: "destroyed")
+  end
+
+  def publish_notification(type: nil)
+    return unless type
+    key = model_name.param_key
+    name = "#{key}.#{type}"
+    ActiveSupport::Notifications.instrument(name, model: self)
+  end
+end

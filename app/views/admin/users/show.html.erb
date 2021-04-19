@@ -1,0 +1,18 @@
+<%= content_for :page_title do %>
+  <%= content_tag :h1, @user.name, class: "font-bold text-2xl" %>
+<% end %>
+
+<%= content_for :page_tools do %>
+<button class="inline-flex items-center px-3 py-1 mr-2 text-sm font-bold text-white bg-indigo-500 rounded">
+  <%= link_to 'Back', :back %>
+</button>
+<% end %>
+
+<section class="flex min-h-0 px-4 py-2">
+  <dl>
+    <dt class="mt-2 font-bold">Name:</dt>
+    <dd><%= @user.name  %></dd>
+    <dt class="mt-2 font-bold">Email:</dt>
+    <dd><%= @user.email  %></dd>
+  </dl>
+</section>

@@ -1,0 +1,21 @@
+<nav data-target="admin.sidebar" class="hidden min-h-screen overflow-hidden overflow-y-scroll text-gray-400 bg-gray-800 border-r md:block">
+  <%= link_to admin_root_path, class: "h-16 flex items-center w-full", title: "Launchpad" do %>
+		<%= image_pack_tag "media/images/logo-symbol.svg", class: "h-8 w-8 mx-auto" %>	
+  <% end %>
+  <% @navigation["Admin::Main"].items.each do |item| %>
+    <% if item.icon.nil? %>
+      <hr class="opacity-25">
+    <% else %>
+      <div class="w-full text-center">
+        <%= link_to item.url, class: "h-16 px-5 flex items-center w-full hover:text-white hover:bg-gray-900 #{item.active? ? "bg-blue-500 hover:bg-blue-500 text-white" : nil}", data: {action: "mouseenter->admin#openTooltip mouseleave->admin#hideTooltip"} do %>
+          <%= content_tag :i, nil, class: "#{item.icon} fa-lg mx-auto" %>
+        <% end %>
+        <div ref="tooltipRef" class="z-50 hidden max-w-xs text-left break-words bg-gray-900 shadow-md">
+          <div class="p-3 font-semibold text-gray-400">
+            <%= item.title %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</nav>

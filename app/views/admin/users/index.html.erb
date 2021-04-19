@@ -1,0 +1,35 @@
+<%= content_for :page_title do %>
+<h1 class="text-2xl font-bold">User Accounts</h1>
+<% end %>
+
+<section class="hidden md:grid grid-flow-col-dense grid-cols-<%= @role_groups.size %> mx-auto px-4 py-2">
+    <% @role_groups.each do |role, users| %>
+    <button class="flex flex-col items-center justify-between p-2 bg-white border border-r-0 focus:outline-none focus:bg-yellow-200 first:rounded-l-md last:border-r last:rounded-r-md">
+      <p class="text-lg font-semibold"><%= users.size %></p>
+      <p class="text-xs leading-snug text-gray-600 uppercase md:text-sm"><%= role.humanize %></p>
+    </button>
+    <% end %>
+</section>
+
+<section class="w-full px-4 py-2">
+  <div class="overflow-hidden rounded-lg shadow-xs ">
+    <table class="w-full whitespace-no-wrap" data-controller="check-all">
+      <thead>
+        <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-100 border-b">
+          <th class="hidden py-3 pl-1 pr-1 text-center border-r sm:table-cell">
+            <input type="checkbox" class="w-5 h-5 text-blue-500 form-checkbox" data-target="check-all.all">
+          </th>
+          <th class="px-4 py-3">User 
+            <span class="font-light normal-case"><span data-target="check-all.count">0</span> selected</span>
+          </th>
+          <th class="px-4 py-3 text-center">Role</th>
+          <th class="hidden px-4 py-3 text-center sm:table-cell">Last Sign-in</th>
+          <th class="hidden px-4 py-3 text-right md:block">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y">
+        <%= render @organization_users %>
+      </tbody>
+    </table>
+  </div>
+</section>

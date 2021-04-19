@@ -1,0 +1,56 @@
+inherit_gem:
+  rubocop-shopify: rubocop.yml
+
+inherit_mode:
+  merge:
+    - Exclude
+    - IgnoredMethods
+
+require:
+  - rubocop-rails
+  - rubocop-minitest
+  - rubocop-performance
+
+AllCops:
+  Exclude:
+    - "bin/**/*.rb"
+
+Style/MethodCallWithArgsParentheses:
+  IgnoredMethods:
+    - gem
+    - render
+    - redirect_to
+    - redirect_back
+    - redirect_back_or
+  Exclude:
+    - "db/migrate/**/*.rb"
+    - "Gemfile"
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+  Enabled: true
+
+Layout/HashAlignment:
+  EnforcedColonStyle: table
+  EnforcedHashRocketStyle: table
+  EnforcedLastArgumentHashStyle: always_inspect
+
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: start_of_line
+
+Layout/CaseIndentation:
+  EnforcedStyle: case
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: no_comma
+  Enabled: true
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: no_comma
+  Enabled: true

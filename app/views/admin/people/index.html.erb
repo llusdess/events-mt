@@ -1,0 +1,143 @@
+<%= content_for :page_title do %>
+<div class="flex flex-row items-center">
+  <h1 class="hidden text-2xl font-bold md:block">People / </h1>
+  <span class="ml-2 text-2xl font-light">List</span>
+</div>
+<% end %>
+
+<%= content_for :page_tools do %>
+  <button class="inline-flex items-center px-3 py-1 text-sm font-bold text-white bg-blue-500 rounded">
+    <%= link_to 'New Person', new_admin_person_path %>
+  </button>
+<% end %>
+
+<section class="flex px-4 py-2">
+  <aside class="hidden mr-2 md:w-2/5 lg:w-1/5 md:block">
+    <ul class="mb-2 overflow-hidden bg-white shadow-xs">
+      <li class="px-2 py-2 mb-2 border-b">
+        <p class="text-sm font-semibold font">
+          <i class="mr-2 text-gray-400 fas fa-filter"></i>Filters
+        </p>
+      </li>
+      <li class="px-3 py-1 mx-1 mb-2 rounded-full hover:bg-blue-100">
+        <%= link_to "#" do %>
+          <div class="flex flex-row items-center justify-between ">
+            <span class="text-sm">Recent</span>
+            <p class="px-3 text-xs font-semibold text-white bg-gray-700 rounded-full">1</p>
+          </div>
+        <% end %>
+      </li>
+      <li class="px-3 py-1 mx-1 mb-2 rounded-full hover:bg-blue-100">
+        <%= link_to "#" do %>
+          <div class="flex flex-row items-center justify-between ">
+            <span class="text-sm">People</span>
+            <p class="px-3 text-xs font-semibold text-white bg-gray-700 rounded-full">1</p>
+          </div>
+        <% end %>
+      </li>
+      <li class="px-3 py-1 mx-1 mb-2 rounded-full hover:bg-blue-100">
+        <%= link_to "#" do %>
+          <div class="flex flex-row items-center justify-between ">
+            <span class="text-sm">Companies</span>
+            <p class="px-3 text-xs font-semibold text-white bg-gray-700 rounded-full">0</p>
+          </div>
+        <% end %>
+      </li>
+      <li class="px-3 py-1 mx-1 mb-2 rounded-full hover:bg-blue-100">
+        <%= link_to "#" do %>
+          <div class="flex flex-row items-center justify-between ">
+            <span class="text-sm">Linked</span>
+            <p class="px-3 text-xs font-semibold text-white bg-gray-700 rounded-full">0</p>
+          </div>
+        <% end %>
+      </li>
+    </ul>
+    
+    <ul class="mb-2 overflow-hidden bg-white shadow-xs">
+      <li class="px-2 py-2 mb-2 border-b">
+        <p class="text-sm font-semibold font">
+          <i class="mr-2 text-gray-400 fas fa-tags"></i>Labels
+        </p>
+      </li>
+      <li class="flex flex-row items-center justify-between px-3 py-1 mx-1 mb-2 rounded-full hover:bg-blue-100">
+        <%= link_to "#" do %>
+          <p>
+            <i class="mr-2 text-green-500 fad fa-circle"></i>
+            <span class="text-sm">Speakers</span>
+          </p>
+        <% end %>
+      </li>
+      <li class="flex flex-row items-center justify-between px-3 py-1 mx-1 mb-2 rounded-full hover:bg-blue-100">
+        <%= link_to "#" do %>
+          <p>
+            <i class="mr-2 text-blue-500 fad fa-circle"></i>
+            <span class="text-sm">Exhibitors</span>
+          </p>
+        <% end %>
+      </li>
+      <li class="flex flex-row items-center justify-between px-3 py-1 mx-1 mb-2 rounded-full hover:bg-blue-100">
+        <%= link_to "#" do %>
+          <p>
+            <i class="mr-2 text-purple-500 fad fa-circle"></i>
+            <span class="text-sm">Alumni</span>
+          </p>
+        <% end %>
+      </li>
+    </ul>
+
+    <ul class="mb-2 overflow-hidden bg-white shadow-xs">
+      <li class="px-2 py-2 mb-2 border-b">
+        <p class="text-sm font-semibold font">
+          <i class="mr-2 text-gray-400 fas fa-thumbtack"></i>My Pins
+        </p>
+      </li>
+      <li class="px-1 py-1 mx-1 mb-2 overflow-hidden leading-tight bg-green-100 border border-gray-300 rounded-md hover:bg-green-200">
+        <%= link_to "#" do %>
+          <p class="text-sm font-semibold">Clarissa Gutkowski</p>
+          <p class="text-xs font-light tracking-tight text-gray-600">clarissa_gutkowski@example.net</p>
+        <% end %>
+      </li>
+      <li class="px-1 py-1 mx-1 mb-2 overflow-hidden leading-tight bg-yellow-100 border border-gray-300 rounded-md hover:bg-yellow-200">
+        <%= link_to "#" do %>
+          <p class="text-sm font-semibold">Napoleon O'Connell</p>
+          <p class="text-xs font-light tracking-tight text-gray-600">napoleon_o@example.net</p>
+        <% end %>
+      </li>
+      <li class="px-1 py-1 mx-1 mb-2 overflow-hidden leading-tight bg-pink-100 border border-gray-300 rounded-md hover:bg-pink-200">
+        <%= link_to "#" do %>
+          <p class="text-sm font-semibold">Justyn Stoltenberg</p>
+          <p class="text-xs font-light tracking-tight text-gray-600">j.stoltenberg@example.net</p>
+        <% end %>
+      </li>
+      <li class="px-1 py-1 mx-1 mb-2 overflow-hidden leading-tight bg-indigo-100 border border-gray-300 rounded-md hover:bg-indigo-200">
+        <%= link_to "#" do %>
+          <p class="text-sm font-semibold">Gladys Bogan</p>
+          <p class="text-xs font-light tracking-tight text-gray-600">bogan-gladys@example.net</p>
+        <% end %>
+      </li>
+    </ul>
+  </aside>
+  
+  <div class="w-full overflow-hidden shadow-xs ">
+    <table class="w-full whitespace-no-wrap" data-controller="check-all">
+      <thead>
+        <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-100 border-b">
+          <th class="hidden py-3 pl-1 pr-1 text-center border-r sm:table-cell">
+            <input type="checkbox" class="w-5 h-5 text-blue-500 form-checkbox" data-target="check-all.all">
+          </th>
+          <th class="py-3 text-center">
+            <i class="fal fa-link"></i>
+          </th>
+          <th class="py-3 pl-0 pr-4">Person
+            <span class="font-light normal-case"><span data-target="check-all.count">0</span> selected</span>
+          </th>
+          <th class="px-4 py-3 text-center">Tags</th>
+          <th class="hidden px-4 py-3 text-right md:block">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y">
+        <%= render @people %>
+      </tbody>
+    </table>
+  </div>
+</section>

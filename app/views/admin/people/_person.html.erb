@@ -1,0 +1,42 @@
+<tr class="text-gray-700">
+  <td class="hidden w-10 py-3 pl-1 pr-1 text-center bg-gray-100 border-r sm:table-cell">
+    <input type="checkbox" class="w-5 h-5 text-blue-500 form-checkbox">
+  </td>
+  <td class="px-1 text-center">
+    <i class="text-sm text-gray-300 far fa-link"></i>
+  </td>
+  <td class="py-3 pl-0 pr-4">
+    <%= link_to admin_person_path(person), class: "flex flex-row align-middle items-center text-sm" do %>
+      <div class="hidden w-8 h-8 mr-3 md:block">
+        <%= render(AvatarComponent.new(email: person.email, name: person.name)) %>
+      </div>
+      <div>
+        <p class="font-semibold"><%= person.name %></p>
+        <p class="text-xs font-medium text-gray-600"><%= person.email %></p>
+      </div>
+    <% end %>
+  </td>
+  <td class="px-4 py-3"><%= person.degrees %></td>
+  <!--
+  <td><%= person.prefered_name %></td>
+  <td><%= person.prefix %></td>
+  <td><%= person.suffix %></td>
+  <td><%= person.degrees %></td>
+  
+  <td><%= person.email %></td>
+  <td><%= person.company %></td>
+  <td><%= person.company_name %></td>
+  <td><%= person.title %></td>
+  <td><%= person.country_code %></td>
+  <td><%= person.cell %></td>
+  <td><%= person.phone %></td>
+  <td><%= person.phone_extension %></td>
+  <td><%= person.fax %></td>
+  <td><%= person.fax_extension %></td>
+  -->
+  <td class="hidden px-4 py-3 text-right md:table-cell">
+    <%= link_to 'Show', admin_person_path(person) %>
+    <%= link_to 'Edit', edit_admin_person_path(person) %>
+    <%= link_to 'Destroy', admin_person_path(person), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </td>
+</tr>

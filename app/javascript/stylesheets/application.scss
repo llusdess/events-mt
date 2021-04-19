@@ -1,0 +1,10 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+
+@import "toastr";
+
+.toast-top-right { 
+  @apply mt-10;
+} 
+
+@import "tailwindcss/utilities";

@@ -1,0 +1,24 @@
+{
+  "name": "events_3",
+  "private": true,
+  "dependencies": {
+    "@github/check-all": "^0.4.0",
+    "@popperjs/core": "^2.4.4",
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "4.2.2",
+    "@tailwindcss/custom-forms": "^0.2.1",
+    "@tailwindcss/typography": "^0.2.0",
+    "font-awesome-pro": "ssh://git@bitbucket.org:llusdaer/font-awesome-pro.git#5.14.0",
+    "stimulus": "^1.1.1",
+    "stimulus_reflex": "^3.3.0-pre2",
+    "tailwindcss": "^1.7.3",
+    "toastr": "^2.1.4",
+    "turbolinks": "^5.2.0"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.0"
+  }
+}

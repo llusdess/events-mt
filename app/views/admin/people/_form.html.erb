@@ -1,0 +1,104 @@
+<div class="container mx-4">
+  <%= form_with(model: [:admin, person]) do |form| %>
+    <% if person.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
+  
+        <ul>
+          <% person.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <label class="block">
+      <span class="text-gray-700">Last Name</span>
+      <%= form.text_field :last_name, class: "form-input mt-1 block w-full" %>
+    </label>
+  
+    <div class="field">
+      <%= form.label :first_name %>
+      <%= form.text_field :first_name %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :prefered_name %>
+      <%= form.text_field :prefered_name %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :prefix %>
+      <%= form.text_field :prefix %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :suffix %>
+      <%= form.text_field :suffix %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :degrees %>
+      <%= form.text_field :degrees %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :tags %>
+      <%= form.text_field :tags %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.text_field :email %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :company %>
+      <%= form.check_box :company %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :company_name %>
+      <%= form.text_field :company_name %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :country_code %>
+      <%= form.text_field :country_code %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :cell %>
+      <%= form.text_field :cell %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :phone %>
+      <%= form.text_field :phone %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :phone_extension %>
+      <%= form.number_field :phone_extension %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :fax %>
+      <%= form.text_field :fax %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :fax_extension %>
+      <%= form.number_field :fax_extension %>
+    </div>
+  
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>

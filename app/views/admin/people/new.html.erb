@@ -1,0 +1,16 @@
+<%= content_for :page_title do %>
+<div class="flex flex-row items-center">
+  <h1 class="hidden text-2xl font-bold md:block">People / </h1>
+  <span class="ml-2 text-2xl font-light">New</span>
+</div>
+<% end %>
+
+<%= content_for :page_tools do %>
+<button class="inline-flex items-center px-3 py-1 mr-2 text-sm font-bold text-white bg-indigo-500 rounded">
+  <%= link_to 'Back', :back %>
+</button>
+<% end %>
+
+<%= render 'form', person: @person %>
+
+<%= link_to 'Back', admin_people_path %>

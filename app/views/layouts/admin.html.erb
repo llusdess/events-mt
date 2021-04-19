@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html class="antialiased">
+  <%= render "shared/head" %>
+  <body class="h-full font-sans font-normal leading-normal text-gray-800 bg-gray-100" data-controller="admin">
+    <%= render "admin/backend/flashes" -%>
+    <div class="flex h-screen">
+      <%= render(Admin::SidebarComponent.new(navigation: navigation)) %>
+      <div class="flex flex-col flex-1">
+        <%= render(Admin::HeaderComponent.new) %>
+        <%= render "admin/backend/page_header" %>
+        <main class="flex-grow overflow-scroll border-t">
+          <%= content_for?(:content) ? yield(:content) : yield %>
+        </main>
+        <%= render "shared/footer" %>
+      </div>
+    </div>
+  </body>
+</html>

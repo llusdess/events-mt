@@ -1,0 +1,20 @@
+en:
+  labels:
+    sign_in: "Sign in"
+    sign_out: "Sign out"
+  headings:
+    sign_in_to_events: "Sign in to Events"
+    launchpad: "Launchpad"
+  failure:
+    invalid: "Invalid user or password."
+  sessions:
+    signed_in: "Signed in successfully."
+    signed_out: "Signed out successfully."
+  faker:
+    name:
+      suffix:
+        - MS
+        - BS
+        - MD
+        - DDS
+        - PhD

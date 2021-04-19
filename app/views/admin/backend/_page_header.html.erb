@@ -1,0 +1,11 @@
+<header class="flex flex-row items-center justify-between flex-none h-16 px-4 bg-gray-100 border-t">
+  <div class="flex items-center row">
+    <%= yield(:page_title) %>
+    <!--<div class="hidden ml-2 text-sm font-thin md:block">
+      <%= render_breadcrumbs %>
+    </div>-->
+  </div>
+  <div class="flex flex-row items-center">
+    <%= yield(:page_tools) %>
+  </div>
+</header>

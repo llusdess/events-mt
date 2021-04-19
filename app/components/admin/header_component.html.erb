@@ -1,0 +1,26 @@
+<nav data-target="admin.header" class="flex items-center justify-between flex-none h-16 px-4 bg-white">
+  <ul class="flex items-center">
+    <li class="mr-3 md:hidden">
+      <button data-action="admin#toggleSidebar">
+        <i class="fal fa-bars"></i>
+      </button>
+    </li>
+    <li class="flex flex-row">
+      <%= link_to admin_root_path, title: "Launchpad" do %>
+        <%= image_pack_tag "media/images/logo-symbol.svg", class: "h-8 w-8 mr-1 #{"md:hidden" unless @show_icon}" %>	
+      <% end %>
+      <%= image_pack_tag "media/images/logo-dark-text.svg", class: "h-8" %>
+    </li>
+  </ul>
+
+  <ul class="flex flex-row items-center">
+    <p class="text-sm font-semibold text-gray-700">
+      <%= link_to @organization, admin_organizations_path %>
+    </p>
+    <%= link_to sign_out_path, method: :delete do %>
+      <button class="relative z-10 flex items-center w-8 h-8 ml-2">
+        <%= render(AvatarComponent.new(email: Current.user&.email, name: Current.user&.name)) %>
+      </button>
+    <% end %>
+  </ul>
+</nav>

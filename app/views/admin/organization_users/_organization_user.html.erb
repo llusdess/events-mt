@@ -1,0 +1,31 @@
+<tr class="text-gray-700">
+  <td class="hidden py-3 pl-1 pr-1 text-center bg-gray-100 border-r sm:table-cell">
+    <input type="checkbox" class="w-5 h-5 text-blue-500 form-checkbox">
+  </td>
+  <td class="px-4 py-3">
+    <%= link_to admin_user_path(id: organization_user.user_id), class: "flex flex-row align-middle items-center text-sm" do %>
+      <div class="hidden w-10 h-10 mr-3 md:block">
+        <%= render(AvatarComponent.new(email: organization_user.email, name: organization_user.name)) %>
+      </div>
+      <div>
+        <p class="font-semibold"><%= organization_user.name %></p>
+        <p class="text-xs font-medium text-gray-600"><%= organization_user.email %></p>
+        <p class="text-xs italic text-gray-600 md:hidden"><span class="">Signed in: </span><%= time_ago_or_never(organization_user.last_sign_in_at) %></p>
+      </div>
+    <% end %>
+  </td>
+  <td class="px-4 py-3 text-xs text-center">
+    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full">
+      <%= organization_user.role.humanize %>
+    </span>
+  </td>
+  <td class="hidden px-4 py-3 text-sm text-center sm:table-cell">
+    <div class="flex flex-col text-xs">
+      <p><%= time_ago_or_never(organization_user.last_sign_in_at) %></p>
+      <p><span class="text-gray-600">from </span><%= organization_user.last_sign_in_ip %></p>
+    </div>
+  </td>
+  <td class="hidden px-4 py-3 text-sm text-right md:block">
+    
+  </td>
+</tr>

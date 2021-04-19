@@ -1,0 +1,4 @@
+<div class="flex items-center justify-between h-8 px-4 bg-white border-t">
+  <div class="text-xs">Powered by ESS</div>
+  <div class="text-xs">Revision: <%= link_to Git::VERSION.truncate(8, omission: ""), "https://bitbucket.org/llusdaer/events-3/commits/#{Git::REVISION}" %> @ <%= Rails.env %> | <%= Rails.version %></div>
+</div>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html class="antialiased">
+  <%= render "shared/head" %>
+  <body class="h-full font-sans font-normal leading-normal text-gray-800 bg-white">
+    <%= render "admin/backend/flashes" -%>
+    <div class="flex h-screen">
+      <div class="flex flex-col flex-1">
+        <%= render(Admin::HeaderComponent.new(show_icon: true)) %>
+        <main class="flex flex-grow min-h-0 px-4 py-2 overflow-scroll border-t">
+          <%= content_for?(:content) ? yield(:content) : yield %>
+        </main>
+        <%= render "shared/footer" %>
+      </div>
+    </div>
+  </body>
+</html>
